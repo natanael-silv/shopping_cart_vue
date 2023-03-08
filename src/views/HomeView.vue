@@ -1,32 +1,39 @@
-<script setup></script>
-
 <template>
   <main v-for="product in products">
-    <Product  :title="product.title" :description="product.description" :price="product.price" :img="product.img"/>
+    <Product
+      :title="product.title"
+      :description="product.description"
+      :price="product.price"
+      :img="product.img"
+      :quantity="product.quantity"
+      :product="product"
+    />
+  
+    
   </main>
 </template>
 
-<script>
+<script setup>
+import { useCartStore } from '../store/CartStore.js'
 import Product from '../components/Product.vue'
-const products = [
+import { reactive } from 'vue'
+
+const state = useCartStore()
+const products = reactive([
   {
     title: 'Fall Limited Edition Sneakers',
-    description: '  These low-profile sneakers are your perfect casual weat companion. Featuring a durable rubber outer sole, they will withstand everything the weather can offer.',
-    price: 125.00,
+    description:
+      '  These low-profile sneakers are your perfect casual weat companion. Featuring a durable rubber outer sole, they will withstand everything the weather can offer.',
+    price: 125.0,
     img: '/assets/images/image-product-1.jpg',
+    quantity: 1
   }
-]
-export default {
-  name: 'Home',
-  components: {
-    Product
-  },
+])
 
-  data() {
-    return {
-      products: products
-    }
-  },
- 
+
+
+function increment(product) {
+  product.quantity++
+  console.log(product)
 }
 </script>
