@@ -8,17 +8,13 @@
       :quantity="product.quantity"
       :product="product"
     />
-  
-    
   </main>
 </template>
 
 <script setup>
-import { useCartStore } from '../store/CartStore.js'
 import Product from '../components/Product.vue'
 import { reactive } from 'vue'
 
-const state = useCartStore()
 const products = reactive([
   {
     title: 'Fall Limited Edition Sneakers',
@@ -29,11 +25,4 @@ const products = reactive([
     quantity: 1
   }
 ])
-
-
-
-function increment(product) {
-  product.quantity++
-  console.log(product)
-}
 </script>
