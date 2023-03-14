@@ -8,11 +8,14 @@
       :quantity="product.quantity"
       :product="product"
     />
+  
   </main>
+
 </template>
 
 <script setup>
 import Product from '../components/Product.vue'
+
 import { reactive } from 'vue'
 
 const products = reactive([

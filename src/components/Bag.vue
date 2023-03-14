@@ -10,9 +10,10 @@ const store = useCartStore()
     <div v-if="product" class="flex items-center justify-between">
       <img :src="product.img" alt="" class="w-[50px] h-[50px] rounded-md mr-7" />
       <div class="text-xs text-slate-500">
-        <p >{{ product.title }}</p>
+        <p>{{ product.title }}</p>
         <div class="">
-          ${{ product.price }} x {{ product.quantity }} <span class="font-bold text-black">${{ product.quantity * product.price }}</span>
+          ${{ product.price }} x {{ product.quantity }}
+          <span class="font-bold text-black">${{ product.quantity * product.price }}</span>
         </div>
       </div>
       <button @click="store.removeProduct(product)" class="px-2">

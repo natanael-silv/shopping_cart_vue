@@ -4,6 +4,7 @@ import { RouterLink, RouterView } from 'vue-router'
 import { useCartStore } from './store/CartStore.js'
 import Bag from '../src/components/Bag.vue'
 
+
 const store = useCartStore()
 const isBag = ref(false)
 const isActive = ref(false)
@@ -24,41 +25,41 @@ function showBag() {
   <header class="relative">
     <nav class="flex justify-between items-center py-5 px-10 border-b-[1px] border-stone-200">
       <div class="flex items-center">
-        <button @click="isActive = !isActive" class="pr-2 md:hidden">
+        <button @click="isActive = !isActive" class="pr-2 lg:hidden">
           <ph-list :size="32" color="#0a0505" />
         </button>
         <img src="/assets/images/logo.svg" alt="" />
       </div>
       <ul
-        class="md:!flex hidden md:relative top-0 left-0 md:h-full bg-white z-10"
+        class="lg:!flex hidden lg:relative top-0 left-0 lg:h-full bg-white z-10 text-gray-500"
         :class="{ ['absolute w-[50%] h-[100vh] !block']: isActive }"
       >
-        <button @click="isActive = !isActive" class="px-3 py-12 md:hidden">X</button>
-        <li class="px-3 py-1 md:font-normal font-bold cursor-pointer">
+        <button @click="isActive = !isActive" class="px-3 py-12 lg:hidden">X</button>
+        <li class="px-3 py-1 lg:font-normal font-bold cursor-pointer">
           <a
             class="relative after:content-[''] after:bg-halloween after:h-[3px] after:w-[0%] hover:after:w-full after:duration-300 after:left-0 after:bottom-[-5px] after:absolute"
             >Collections</a
           >
         </li>
-        <li class="px-3 py-1 md:font-normal font-bold cursor-pointer">
+        <li class="px-3 py-1 lg:font-normal font-bold cursor-pointer">
           <a
             class="relative after:content-[''] after:bg-halloween after:h-[3px] after:w-[0%] hover:after:w-full after:duration-300 after:left-0 after:bottom-[-5px] after:absolute"
             >Men</a
           >
         </li>
-        <li class="px-3 py-1 md:font-normal font-bold cursor-pointer">
+        <li class="px-3 py-1 lg:font-normal font-bold cursor-pointer">
           <a
             class="relative after:content-[''] after:bg-halloween after:h-[3px] after:w-[0%] hover:after:w-full after:duration-300 after:left-0 after:bottom-[-5px] after:absolute"
             >Women</a
           >
         </li>
-        <li class="px-3 py-1 md:font-normal font-bold cursor-pointer">
+        <li class="px-3 py-1 lg:font-normal font-bold cursor-pointer">
           <a
             class="relative after:content-[''] after:bg-halloween after:h-[3px] after:w-[0%] hover:after:w-full after:duration-300 after:left-0 after:bottom-[-5px] after:absolute"
             >About</a
           >
         </li>
-        <li class="px-3 py-1 md:font-normal font-bold cursor-pointer">
+        <li class="px-3 py-1 lg:font-normal font-bold cursor-pointer">
           <a
             class="relative after:content-[''] after:bg-halloween after:h-[3px] after:w-[0%] hover:after:w-full after:duration-300 after:left-0 after:bottom-[-5px] after:absolute"
             >Contact</a
@@ -79,7 +80,7 @@ function showBag() {
     </nav>
     <div v-if="isBag" class="w-full flex justify-center items-center">
       <div
-        class="top-24 absolute bg-white px-12 py-10 rounded-lg w-[350px] flex justify-center md:right-2 shadow-lg"
+        class="top-24 absolute bg-white px-12 py-10 rounded-lg w-[350px] flex justify-center lg:right-2 shadow-lg flex-col gap-2"
       >
         <Bag />
       </div>
